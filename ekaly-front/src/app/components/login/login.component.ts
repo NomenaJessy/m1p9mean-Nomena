@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.data.connexion(this.Mail,this.MotDePasse).subscribe(resultat=>{
       console.log(resultat);
     },error=>{
-      this.error_msg = error;
+      this.error_msg = "Verifiez votre adresse e-mail et/ou mot de passe!";
     });
   }
 

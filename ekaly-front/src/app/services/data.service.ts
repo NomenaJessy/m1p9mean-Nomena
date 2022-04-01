@@ -19,4 +19,18 @@ export class DataService {
     };
     return this.http.post(base_url+'/Connexion',body,options);
   }
+
+  inscription(nom: string,pseudo: string,datenaissance: string,profil: string,mail: string,motdepasse: string){
+    const options = this.helper.formOption();
+
+    let body = {
+      'Nom': nom,
+      'Pseudo': pseudo,
+      'DateNaissance': datenaissance,
+      'Profil': profil,
+      'Mail': mail,
+      'MotDePasse': motdepasse
+    }
+    return this.http.post(base_url + '/Inscription',body,options);
+  }
 }
