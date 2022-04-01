@@ -7,7 +7,7 @@ router.post('/Connexion', async (req,res)=>{
     try{
         req.body.MotDePasse = sha1(req.body.MotDePasse);
         await utilisateur.findOne({Mail: req.body.Mail,MotDePasse : req.body.MotDePasse}).then(resultat=>{
-            const token = sha1(resultat['_id'] + resultat['Nom']);
+            const token = resultat['_id'];
             res.status(200).send({status : 200,data: resultat,token: token});
         });
     }catch(error){
@@ -24,6 +24,16 @@ router.get('/findUser', async (req,res)=>{
     } 
 });
 
+router.get('/findUserById/:id', async (req,res)=>{
+    try{
+        await utilisateur.findById(req.params.id).then(resultat=>{
+            res.status(200).send(resultat);
+        });
+    }catch(error){
+        res.status(500).send(error);
+    } 
+});
+
 router.post('/Inscription',async (req,res)=>{
     try{
         req.body.MotDePasse = sha1(req.body.MotDePasse);
@@ -32,7 +42,7 @@ router.post('/Inscription',async (req,res)=>{
                 const user = new utilisateur(req.body);
                 await user.save(async function(){
                     await utilisateur.findOne({Mail: req.body.Mail,MotDePasse : req.body.MotDePasse}).then(resultat=>{
-                        const token = sha1(resultat['_id'] + resultat['Nom']);
+                        const token = resultat['_id'];
                         res.status(200).send({status : 200,data: resultat,token: token});
                     });
                 });
