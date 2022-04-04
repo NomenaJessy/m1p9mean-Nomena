@@ -34,6 +34,16 @@ router.get('/findUserById/:id', async (req,res)=>{
     } 
 });
 
+router.get('/findProfil/:profil', async (req,res)=>{
+    try {
+        await utilisateur.find({Profil : req.params.profil}).then(resultat=>{
+            res.status(200).send({status: 200,data: resultat});
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
 router.post('/Inscription',async (req,res)=>{
     try{
         req.body.MotDePasse = sha1(req.body.MotDePasse);
