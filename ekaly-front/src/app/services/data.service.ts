@@ -33,4 +33,8 @@ export class DataService {
     }
     return this.http.post(base_url + '/Inscription',body,options);
   }
+
+  userById(id: any){
+    return this.http.get(base_url+'/findUserById/'+id);
+  }
 }
