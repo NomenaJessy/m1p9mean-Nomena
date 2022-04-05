@@ -1,5 +1,56 @@
 <app-header></app-header>
 
-<p>Bonjour {{Nom}}</p>
-
+<div *ngIf="Profil === 'Client'">
+    <section class="our-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Bonjour {{Nom}}! Visitez les restaurants</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" *ngFor="let item of DataRestaurant">
+                    <div class="blog-post">
+                        <div class="right-content">
+                            <h4>{{item.Pseudo}}</h4>
+                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
+                            <div class="text-button">
+                                <a href="#">Visiter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div *ngIf="Profil === 'Livreur'">
+    <section class="our-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Bonjour {{Nom}}! Livrez les commandes des clients</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" *ngFor="let item of DataCommande">
+                    <div class="blog-post">
+                        <div class="right-content">
+                            <h4>{{item.restaurant}}</h4>
+                            <span>{{item.livraison}}</span>
+                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
+                            <div class="text-button">
+                                <a href="#">Livrer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 <app-footer></app-footer>

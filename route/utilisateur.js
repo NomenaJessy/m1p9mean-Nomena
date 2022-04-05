@@ -18,7 +18,7 @@ router.post('/Connexion', async (req,res)=>{
 router.get('/findUser', async (req,res)=>{
     try{
         const utilisateurs = await utilisateur.find({});
-        res.status(200).send(utilisateurs);
+        res.status(200).send({status: 200, data:utilisateurs});
     }catch(error){
         res.status(500).send(error);
     } 
@@ -27,7 +27,7 @@ router.get('/findUser', async (req,res)=>{
 router.get('/findUserById/:id', async (req,res)=>{
     try{
         await utilisateur.findById(req.params.id).then(resultat=>{
-            res.status(200).send(resultat);
+            res.status(200).send({status: 200,data:resultat});
         });
     }catch(error){
         res.status(500).send(error);

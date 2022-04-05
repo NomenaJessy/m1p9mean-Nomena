@@ -37,4 +37,12 @@ export class DataService {
   userById(id: any){
     return this.http.get(base_url+'/findUserById/'+id);
   }
+
+  findProfil(profil: any){
+    return this.http.get(base_url+'/findProfil/'+profil);
+  }
+
+  findCommande(){
+    return this.http.get(base_url+'Commande');
+  }
 }
