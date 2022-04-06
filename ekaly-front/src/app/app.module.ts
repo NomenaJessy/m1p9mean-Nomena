@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RestaurantComponent } from './components/restaurant/restaurant.component';
 import { PlatComponent } from './components/plat/plat.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProfilComponent } from './components/profil/profil.component';
     SigninComponent,
     RestaurantComponent,
     PlatComponent,
-    ProfilComponent
+    ProfilComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

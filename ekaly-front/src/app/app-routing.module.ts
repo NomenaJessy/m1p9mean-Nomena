@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfilComponent } from './components/profil/profil.component';
 import { RestaurantComponent } from './components/restaurant/restaurant.component';
 import { SigninComponent } from './components/signin/signin.component';
 
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'restaurant',
     component: RestaurantComponent
+  },
+  {
+    path: 'profil',
+    component: ProfilComponent
+  },
+  {
+    path: 'confirm',
+    component: ConfirmComponent
   }
 ];
 

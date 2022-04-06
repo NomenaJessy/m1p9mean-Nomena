@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(public data: DataService,public router: Router) { }
 
   ngOnInit(): void {
+    this.isLogged();
   }
 
   Mail: string = '';
@@ -28,4 +29,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  isLogged(){
+    if(localStorage.getItem('token') != null){
+      this.router.navigate(['accueil']);
+    }
+  }
 }

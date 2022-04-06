@@ -1,6 +1,6 @@
 section.our-blog {
 	background-color: #f2f6ff;
-	padding: 100px 0px 70px 0px;
+	padding: 70px 0px 70px 0px;
 }
 
 .our-blog .heading h2 {
@@ -66,8 +66,8 @@ section.our-blog {
 	font-weight: 500;
 	letter-spacing: 0.5px;
 	padding: 8px 14px;
-	position: absolute;
-	left: 15px;
+	/* position: absolute; */
+	/* left: 15px; */
 	top: 0px;
 	background-color: rgba(250, 250, 250, 0.9);
 }
