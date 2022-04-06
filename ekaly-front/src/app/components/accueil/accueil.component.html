@@ -7,6 +7,7 @@
                 <div class="col-md-12">
                     <div class="heading">
                         <h2>Bonjour {{Nom}}! Visitez les restaurants</h2>
+                        <input type="text" id="login" class="fadeIn second"  placeholder="Rechercher un restaurant">
                     </div>
                 </div>
             </div>
@@ -17,7 +18,7 @@
                             <h4>{{item.Pseudo}}</h4>
                             <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
                             <div class="text-button">
-                                <a href="#">Visiter</a>
+                                <a (click)="goRestaurant(item.Pseudo)">Visiter</a>
                             </div>
                         </div>
                     </div>
@@ -42,6 +43,33 @@
                         <div class="right-content">
                             <h4>{{item.restaurant}}</h4>
                             <span>{{item.livraison}}</span>
+                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
+                            <div class="text-button">
+                                <a href="#">Livrer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div *ngIf="Profil === 'Responsable E-kaly'">
+    <section class="our-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Bonjour {{Nom}}! Livrez les commandes des clients</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" >
+                    <div class="blog-post">
+                        <div class="right-content">
+                            <!-- <h4>{{item.restaurant}}</h4>
+                            <span>{{item.livraison}}</span> -->
                             <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
                             <div class="text-button">
                                 <a href="#">Livrer</a>

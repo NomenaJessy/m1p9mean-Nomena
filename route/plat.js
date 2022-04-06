@@ -12,6 +12,16 @@ router.get('/Plat',async (req,res)=>{
     }
 });
 
+router.get('/Plat/:restaurant', async (req,res)=>{
+    try {
+        await plat.find({Restaurant: req.params.restaurant}).then(resultat=>{
+            res.status(200).send({status: 200, data: resultat});
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
 router.get('/Plat/:id',async (req,res)=>{
     try{
         await plat.findById(req.params.id).then(resultat=>{

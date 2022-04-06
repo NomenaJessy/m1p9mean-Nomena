@@ -11,6 +11,8 @@ import { SigninComponent } from './components/signin/signin.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestaurantComponent } from './components/restaurant/restaurant.component';
+import { PlatComponent } from './components/plat/plat.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
     AccueilComponent,
     LoginComponent,
     SigninComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    PlatComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

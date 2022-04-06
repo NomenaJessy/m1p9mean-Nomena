@@ -17,7 +17,7 @@ export class SigninComponent implements OnInit {
   Nom: string = '';
   Pseudo: string='';
   DateNaissance: string='';
-  Profil: string='';
+  Profil: string='Client';
   Mail: string='';
   MotDePasse: string='';
 

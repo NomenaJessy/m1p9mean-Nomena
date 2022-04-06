@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor(public data: DataService) {
+  constructor(public data: DataService,public router: Router) {
 
   }
 
@@ -47,6 +48,10 @@ export class AccueilComponent implements OnInit {
         this.DataCommande = resultat['data'];
       }
     });
+  }
+
+  goRestaurant(restaurant: any){
+    this.router.navigate(['/restaurant'],{queryParams: {restaurant: restaurant}});
   }
 
 }

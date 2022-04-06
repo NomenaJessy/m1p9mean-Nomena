@@ -45,4 +45,8 @@ export class DataService {
   findCommande(){
     return this.http.get(base_url+'Commande');
   }
+
+  findPlat(restaurant: any){
+    return this.http.get(base_url+'/Plat/'+restaurant);
+  }
 }

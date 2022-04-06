@@ -1,3 +1,30 @@
 <app-header></app-header>
 
+<section class="our-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>Commandez vos plats</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" *ngFor="let item of Data">
+                <div class="blog-post">
+                    <div class="right-content">
+                        <h4>{{item.NomPlat }} - {{item.Prix}}</h4>
+                        <span>{{item.NomCategorie}}</span>
+                        <p>{{item.Description}}</p>
+                        <input type="number" placeholder="Quantite">
+                        <div class="text-button">
+                            <a >Ajouter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- mamorona tableau dynamique genre panier -->
 <app-footer></app-footer>
