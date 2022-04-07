@@ -10,19 +10,26 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6" *ngFor="let item of Data">
-                <div class="blog-post">
-                    <div class="right-content">
-                        <h4>{{item.NomPlat }} - {{item.Prix}}</h4>
-                        <span>{{item.NomCategorie}}</span>
-                        <p>{{item.Description}}</p>
-                        <input type="number" placeholder="Quantite">
-                        <div class="text-button">
-                            <a >Ajouter</a>
-                        </div>
+            <div class="col-md-6" *ngFor="let item of Data;let id = index">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.NomPlat +" - "+ item.Prix +" Ariary"}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{item.NomCategorie}}</h6>
+                      <p class="card-text">{{item.Description}}</p>
+                      <button class="btn btn-outline-primary" (click)="removeSelection(id)">-</button>
+                      <input type="number" class="fadeIn second" [(ngModel)]="item.Quantite" [ngModelOptions]="{standalone: true}"  placeholder="Quantite">
+                      <!-- <a  class="card-link btn btn-outline-primary ml-3" (click)="getSelection(id)">Ajouter</a> -->
+                        <button class="btn btn-outline-primary" (click)="addSelection(id)">+</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-5"></div>
+            <div class="col-md-2" style="margin-left: 60px">
+                <button class="btn btn-outline-primary" (click)="getSelection()">Valider</button>
+            </div>
+            <!-- <div class="col-md-4"></div> -->
         </div>
     </div>
 </section>

@@ -59,6 +59,18 @@ export class DataService {
     return this.http.put(base_url+'/Confirmation',body,options);
   }
 
+  InsertPlat(NomPlat: string,NomCategorie: string,Description: string,Restaurant: string,Prix: number){
+    const options = this.helper.formOption();
+    let body={
+      'NomPlat': NomPlat,
+      'NomCategorie': NomCategorie,
+      'Description': Description,
+      'Restaurant': Restaurant,
+      'Prix': Prix
+    };
+    return this.http.post(base_url+'/Plat',body,options);
+  }
+
   userById(id: any){
     return this.http.get(base_url+'/findUserById/'+id);
   }

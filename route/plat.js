@@ -34,7 +34,7 @@ router.get('/Plat/:id',async (req,res)=>{
 
 router.post('/Plat',async (req,res)=>{
     try {
-        await plat.find({}).then(resultat =>{
+        await plat.find({NomPlat: req.body.NomPlat,Restaurant: req.body.Restaurant}).then(resultat =>{
             if(resultat.length === 0){
                 const Plats = new plat(req.body);
                 Plats.save(async function(){

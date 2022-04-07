@@ -1,1 +1,49 @@
-<p>plat works!</p>
+<app-header></app-header>
+<div class="row">
+    <div class="col-md-6">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom du plat</th>
+                <th>Categorie</th>
+                <th>Description</th>
+                <th>Prix en Ariary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of Data">
+                <td>{{item.NomPlat}}</td>
+                <td>{{item.NomCategorie}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.Prix}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <h2 class="active">Ajouter un nouveau plat</h2>
+            <form>
+                <p style="color:red">{{error_msg}}</p> 
+                <input type="text" id="login" class="fadeIn second" [(ngModel)]="NomPlat" [ngModelOptions]="{standalone: true}" placeholder="Nom du plat">
+                <input type="text" id="login" class="fadeIn second" [(ngModel)]="NomCategorie" [ngModelOptions]="{standalone: true}" placeholder="Categorie">
+                <input type="text" id="login" class="fadeIn second" [(ngModel)]="Description" [ngModelOptions]="{standalone: true}" placeholder="Description du plat">
+                <input type="text" id="login" class="fadeIn second" [(ngModel)]="Prix" [ngModelOptions]="{standalone: true}" placeholder="Prix en Ariary">
+                <input type="submit" class="fadeIn fourth" value="Ajouter" (click)="InsertPlat()" >
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<app-footer></app-footer>

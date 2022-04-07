@@ -20,6 +20,7 @@ export class AccueilComponent implements OnInit {
   }
 
   Nom: string='';
+  Pseudo: string='';
   Profil: string='';
   DataRestaurant: any;
   DataCommande: any;
@@ -30,6 +31,7 @@ export class AccueilComponent implements OnInit {
       if(resultat['status']===200){
         this.Nom = resultat['data']['Nom'];
         this.Profil = resultat['data']['Profil'];
+        this.Pseudo = resultat['data']['Pseudo'];
       }
     });
   }
@@ -52,6 +54,10 @@ export class AccueilComponent implements OnInit {
 
   goRestaurant(restaurant: any){
     this.router.navigate(['/restaurant'],{queryParams: {restaurant: restaurant}});
+  }
+
+  goPlat(restaurant: any){
+    this.router.navigate(['/plat'],{queryParams: {restaurant: restaurant}});
   }
 
 }

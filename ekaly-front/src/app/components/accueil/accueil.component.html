@@ -7,19 +7,22 @@
                 <div class="col-md-12">
                     <div class="heading">
                         <h2>Bonjour {{Nom}}! Visitez les restaurants</h2>
-                        <input type="text" id="login" class="fadeIn second"  placeholder="Rechercher un restaurant">
                     </div>
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                    <input type="text" id="login" class="fadeIn second"  placeholder="Rechercher un restaurant">
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6" *ngFor="let item of DataRestaurant">
-                    <div class="blog-post">
-                        <div class="right-content">
-                            <h4>{{item.Pseudo}}</h4>
-                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
-                            <div class="text-button">
-                                <a (click)="goRestaurant(item.Pseudo)">Visiter</a>
-                            </div>
+                    <div class="card mt-5">
+                        <div class="card-body">
+                          <h5 class="card-title">{{"Restaurant "+item.Pseudo}}</h5>
+                          <p class="card-text"></p>
+                          <a (click)="goRestaurant(item.Pseudo)" class="card-link">Visiter</a>
                         </div>
                     </div>
                 </div>
@@ -39,14 +42,11 @@
             </div>
             <div class="row">
                 <div class="col-md-6" *ngFor="let item of DataCommande">
-                    <div class="blog-post">
-                        <div class="right-content">
-                            <h4>{{item.restaurant}}</h4>
-                            <span>{{item.livraison}}</span>
-                            <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon...</p>
-                            <div class="text-button">
-                                <a href="#">Livrer</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">{{item.restaurant}}</h5>
+                          <p class="card-text">{{item.livraison}}</p>
+                          <a href="#" class="card-link">Livrer</a>
                         </div>
                     </div>
                 </div>
@@ -66,24 +66,55 @@
             </div>
             <div class="row">
                 <div class="col-md-6" >
-                    <div class="blog-post">
-                        <div class="right-content">
-                            <h4>Gerer les restaurants</h4>
-                            <p>Voir les restaurants </p>
-                            <div class="text-button">
-                                <a href="#">Livrer</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Gerer les restaurants</h5>
+                          <p class="card-text">Voir les restaurants</p>
+                          <a href="#" class="card-link">Voir</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" >
-                    <div class="blog-post">
-                        <div class="right-content">
-                            <h4>Gerer les utilisateurs</h4>
-                            <p>Voir et ajouter des utilisateurs</p>
-                            <div class="text-button">
-                                <a href="profil">Voir</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Gerer les utilisateurs</h5>
+                          <p class="card-text">Voir et ajouter des utilisateurs</p>
+                          <a href="#" class="card-link">Voir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div *ngIf="Profil === 'Restaurant'">
+    <section class="our-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Bonjour {{Nom}}! Controlez les commandes et les plats</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" >
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Gerer les commandes</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Voir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" >
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Gerer les plats</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a (click)="goPlat(Pseudo)" class="card-link">Voir</a>
                         </div>
                     </div>
                 </div>
