@@ -24,11 +24,15 @@ export class ConfirmComponent implements OnInit {
   }
 
   Confirmation(){
-    this.data.Confirmation(this.idUtilisateur,this.MotDePasse).subscribe((resultat:any)=>{
-      localStorage.setItem('token',resultat['token']);
-      this.router.navigate(['accueil']);
-    },()=>{
-      this.error_msg = "Mot de passe non valide";
-    });
+    if(this.MotDePasse != ''){
+      this.data.Confirmation(this.idUtilisateur,this.MotDePasse).subscribe((resultat:any)=>{
+        localStorage.setItem('token',resultat['token']);
+        this.router.navigate(['accueil']);
+      },()=>{
+        this.error_msg = "Mot de passe non valide";
+      });
+    }else{
+      this.error_msg = "Veuillez completer le champs";
+    }
   }
 }
