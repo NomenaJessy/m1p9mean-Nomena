@@ -88,6 +88,20 @@ router.get('/findProfil/:profil', async (req,res)=>{
     }
 });
 
+router.put('/Confirmation',async (req,res)=>{
+    try {
+        var condition = {_id: req.body.id};
+        req.body.MotDePasse = sha1(req.body.MotDePasse);
+        utilisateur.updateOne(condition,{MotDePasse: req.body.MotDePasse},async function(err,resultat){
+            await utilisateur.findOne({_id: req.body.id}).then(resultat=>{
+                const token = resultat['_id'];
+                res.status(200).send({status: 200,data: resultat,token: token});
+            });
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 
 
 

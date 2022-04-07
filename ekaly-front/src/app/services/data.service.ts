@@ -20,6 +20,10 @@ export class DataService {
     return this.http.post(base_url+'/Connexion',body,options);
   }
 
+  findUser(){
+    return this.http.get(base_url+'/findUser'); 
+  }
+
   inscription(nom: string,pseudo: string,datenaissance: string,profil: string,mail: string,motdepasse: string){
     const options = this.helper.formOption();
 
@@ -32,6 +36,27 @@ export class DataService {
       'MotDePasse': motdepasse
     }
     return this.http.post(base_url + '/Inscription',body,options);
+  }
+
+  inscriptionProfil(nom: string,pseudo: string,datenaissance: string,profil: string,mail: string){
+    const options = this.helper.formOption();
+    let body = {
+      'Nom': nom,
+      'Pseudo': pseudo,
+      'DateNaissance': datenaissance,
+      'Profil': profil,
+      'Mail': mail
+    }
+    return this.http.post(base_url+'/InscriptionProfil',body,options);
+  }
+
+  Confirmation(id: string,MotDePasse: string){
+    const options = this.helper.formOption();
+    let body={
+      'id': id,
+      'MotDePasse': MotDePasse
+    };
+    return this.http.put(base_url+'/Confirmation',body,options);
   }
 
   userById(id: any){
