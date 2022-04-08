@@ -44,7 +44,7 @@ export class RestaurantComponent implements OnInit {
     const idUtilisateur = localStorage.getItem('token');
     this.data.userById(idUtilisateur).subscribe((resultat:any)=>{
       if(resultat['status']===200){
-        this.utilisateur = resultat['data']['Mail'];
+        this.utilisateur = resultat['data']['Pseudo'];
       }
     });
   }
