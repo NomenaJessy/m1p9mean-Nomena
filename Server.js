@@ -17,7 +17,9 @@ app.use(profilRouter);
 app.use(commandeRouter);
 app.use(livraisonRouter);
 
-app.listen(1042,function(){
+const port = process.env.PORT || 1042;
+
+app.listen(port,function(){
     console.log("Server is running on port 1042");
 });
 

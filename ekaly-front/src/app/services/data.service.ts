@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { base_url } from 'src/environments/environment';
+// import { base_url } from 'src/environments/environment';
 import { HelperService } from './helper.service';
 
 @Injectable({
@@ -17,11 +17,11 @@ export class DataService {
       'Mail': mail,
       'MotDePasse': motdepasse
     };
-    return this.http.post(base_url+'/Connexion',body,options);
+    return this.http.post('Connexion',body,options);
   }
 
   findUser(){
-    return this.http.get(base_url+'/findUser'); 
+    return this.http.get('findUser'); 
   }
 
   inscription(nom: string,pseudo: string,datenaissance: string,profil: string,mail: string,motdepasse: string){
@@ -35,7 +35,7 @@ export class DataService {
       'Mail': mail,
       'MotDePasse': motdepasse
     }
-    return this.http.post(base_url + '/Inscription',body,options);
+    return this.http.post('Inscription',body,options);
   }
 
   inscriptionProfil(nom: string,pseudo: string,datenaissance: string,profil: string,mail: string){
@@ -47,7 +47,7 @@ export class DataService {
       'Profil': profil,
       'Mail': mail
     }
-    return this.http.post(base_url+'/InscriptionProfil',body,options);
+    return this.http.post('InscriptionProfil',body,options);
   }
 
   Confirmation(id: string,MotDePasse: string){
@@ -56,7 +56,7 @@ export class DataService {
       'id': id,
       'MotDePasse': MotDePasse
     };
-    return this.http.put(base_url+'/Confirmation',body,options);
+    return this.http.put('Confirmation',body,options);
   }
 
   InsertPlat(NomPlat: string,NomCategorie: string,Description: string,Restaurant: string,Prix: number){
@@ -68,7 +68,7 @@ export class DataService {
       'Restaurant': Restaurant,
       'Prix': Prix
     };
-    return this.http.post(base_url+'/Plat',body,options);
+    return this.http.post('Plat',body,options);
   }
 
   InsertCommande(Restaurant: string,utilisateur: string,plat: string[],quantite: number[],livraison: string,prixTotal: number,dateCommande: string){
@@ -82,26 +82,26 @@ export class DataService {
       'prixTotal': prixTotal,
       'dateCommande': dateCommande
     }
-    return this.http.post(base_url+'/Commande',body,options);
+    return this.http.post('Commande',body,options);
   }
 
   userById(id: any){
-    return this.http.get(base_url+'/findUserById/'+id);
+    return this.http.get('findUserById/'+id);
   }
 
   findProfil(profil: any){
-    return this.http.get(base_url+'/findProfil/'+profil);
+    return this.http.get('findProfil/'+profil);
   }
 
   findCommande(){
-    return this.http.get(base_url+'/Commande');
+    return this.http.get('Commande');
   }
 
   findPlat(restaurant: any){
-    return this.http.get(base_url+'/Plat/'+restaurant);
+    return this.http.get('Plat/'+restaurant);
   }
 
   findCommandeResto(restaurant: any){
-    return this.http.get(base_url+'/CommandeResto/'+restaurant);
+    return this.http.get('CommandeResto/'+restaurant);
   }
 }
