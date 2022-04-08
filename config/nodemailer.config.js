@@ -23,7 +23,7 @@ module.exports.sendConfirmationMail = (name, email, confirmationCode)=>{
           html: `<h1>Email de confirmation</h1>
               <h2>Bonjour ${name}</h2>
               <p>Merci de rejoindre notre equipe E-kaly. Veuillez modifier votre mot de passe en suivant ce lien.</p>
-              <a href=http://localhost:4200/confirm?code=${confirmationCode}> Cliquez ici</a>
+              <a href=http://ekaly-nomena.herokuapp.com/confirm?code=${confirmationCode}> Cliquez ici</a>
               </div>`,
         }).catch(err => console.log(err));
 };
