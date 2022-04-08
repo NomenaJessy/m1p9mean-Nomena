@@ -71,6 +71,20 @@ export class DataService {
     return this.http.post(base_url+'/Plat',body,options);
   }
 
+  InsertCommande(Restaurant: string,utilisateur: string,plat: string[],quantite: number[],livraison: string,prixTotal: number,dateCommande: Date){
+    const options = this.helper.formOption();
+    let body={
+      'restaurant':Restaurant,
+      'utilisateur': utilisateur,
+      'plat': plat,
+      'quantite': quantite,
+      'livraison': livraison,
+      'prixTotal': prixTotal,
+      'dateCommande': dateCommande
+    }
+    return this.http.post(base_url+'/Commande',body,options);
+  }
+
   userById(id: any){
     return this.http.get(base_url+'/findUserById/'+id);
   }
@@ -80,10 +94,14 @@ export class DataService {
   }
 
   findCommande(){
-    return this.http.get(base_url+'Commande');
+    return this.http.get(base_url+'/Commande');
   }
 
   findPlat(restaurant: any){
     return this.http.get(base_url+'/Plat/'+restaurant);
+  }
+
+  findCommandeResto(restaurant: any){
+    return this.http.get(base_url+'/CommandeResto/'+restaurant);
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { CommandeComponent } from './components/commande/commande.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { LoginComponent } from './components/login/login.component';
 import { PlatComponent } from './components/plat/plat.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'plat',
     component: PlatComponent
+  },
+  {
+    path: 'commande',
+    component: CommandeComponent
   }
 ];
 

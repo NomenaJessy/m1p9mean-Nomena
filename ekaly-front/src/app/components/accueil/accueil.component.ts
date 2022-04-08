@@ -52,6 +52,10 @@ export class AccueilComponent implements OnInit {
     });
   }
 
+  goCommande(restaurant: any){
+    this.router.navigate(['/commande'],{queryParams: {restaurant: restaurant}});
+  }
+
   goRestaurant(restaurant: any){
     this.router.navigate(['/restaurant'],{queryParams: {restaurant: restaurant}});
   }

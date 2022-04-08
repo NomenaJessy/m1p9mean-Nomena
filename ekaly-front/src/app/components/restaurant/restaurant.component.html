@@ -10,6 +10,13 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-8">
+                <p style="color:red;text-align: center;">{{error_msg}}</p>
+                <input type="text" [(ngModel)]="Livraison" [ngModelOptions]="{standalone: true}" placeholder="Lieu de livraison">
+            </div>
+        </div>
+        <div class="row mt-4">
             <div class="col-md-6" *ngFor="let item of Data;let id = index">
                 <div class="card">
                     <div class="card-body">
@@ -19,7 +26,7 @@
                       <button class="btn btn-outline-primary" (click)="removeSelection(id)">-</button>
                       <input type="number" class="fadeIn second" [(ngModel)]="item.Quantite" [ngModelOptions]="{standalone: true}"  placeholder="Quantite">
                       <!-- <a  class="card-link btn btn-outline-primary ml-3" (click)="getSelection(id)">Ajouter</a> -->
-                        <button class="btn btn-outline-primary" (click)="addSelection(id)">+</button>
+                      <button class="btn btn-outline-primary" (click)="addSelection(id)">+</button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="row">
+    <div class="col-md-6">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nom du client</th>
+                <th>Plat</th>
+                <th>Quantite</th>
+                <th>Lieu de livraison</th>
+                <th>Prix total</th>
+                <th>Date du commande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of Data">
+                <td>{{item.utilisateur}}</td>
+                <td>{{item.plat}}</td>
+                <td>{{item.quantite}}</td>
+                <td>{{item.livraison}}</td>
+                <td>{{item.prixTotal}}</td>
+                <td>{{item.dateCommande}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active">Notre statistique</h2>
+          <!-- <form>
+            <p style="color:red">{{error_msg}}</p>
+            <input type="text" id="login" class="fadeIn second" [(ngModel)]="Nom" [ngModelOptions]="{standalone: true}" placeholder="Nom et prenom">
+            <input type="text" id="login" class="fadeIn second" [(ngModel)]="Pseudo" [ngModelOptions]="{standalone: true}" placeholder="Pseudo">
+            <input type="date" id="login" class="fadeIn second" [(ngModel)]="DateNaissance" [ngModelOptions]="{standalone: true}" placeholder="Date de naissance">
+            <label for="" style="margin-top:2px;margin-bottom: 3px">Type de profil</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [(ngModel)]="Profil" [ngModelOptions]="{standalone: true}" value="Livreur">
+                <label class="form-check-label">Livreur</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [(ngModel)]="Profil" [ngModelOptions]="{standalone: true}" value="Restaurant">
+                <label class="form-check-label">Restaurant</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" [(ngModel)]="Profil" [ngModelOptions]="{standalone: true}" value="Responsable E-Kaly">
+              <label class="form-check-label">Responsable E-Kaly</label>
+          </div>
+            <input type="mail" id="login" class="fadeIn second" [(ngModel)]="Mail" [ngModelOptions]="{standalone: true}" placeholder="Adresse e-mail">
+            <input type="submit" class="fadeIn fourth" value="Ajouter" (click)="Inscription()" >
+          </form>
+       -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-footer></app-footer>

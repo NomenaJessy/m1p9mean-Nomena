@@ -70,6 +70,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Gerer les restaurants</h5>
                           <p class="card-text">Voir les restaurants</p>
+                          <!-- liste des restos + total commande -->
                           <a href="#" class="card-link">Voir</a>
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Gerer les utilisateurs</h5>
                           <p class="card-text">Voir et ajouter des utilisateurs</p>
-                          <a href="#" class="card-link">Voir</a>
+                          <a href="profil" class="card-link">Voir</a>
                         </div>
                     </div>
                 </div>
@@ -102,9 +103,8 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Gerer les commandes</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="card-link">Voir</a>
+                          <p class="card-text">Consultez les commandes de nos clients et nos statistiques</p>
+                          <a (click)="goCommande(Pseudo)" class="card-link">Voir</a>
                         </div>
                     </div>
                 </div>
@@ -112,8 +112,7 @@
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Gerer les plats</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text">Ajoutez et consultez vos plats</p>
                           <a (click)="goPlat(Pseudo)" class="card-link">Voir</a>
                         </div>
                     </div>

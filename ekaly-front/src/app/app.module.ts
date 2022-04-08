@@ -14,6 +14,7 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
 import { PlatComponent } from './components/plat/plat.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { CommandeComponent } from './components/commande/commande.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     RestaurantComponent,
     PlatComponent,
     ProfilComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    CommandeComponent
   ],
   imports: [
     BrowserModule,
