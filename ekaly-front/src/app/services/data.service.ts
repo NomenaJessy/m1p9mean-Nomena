@@ -71,7 +71,7 @@ export class DataService {
     return this.http.post(base_url+'/Plat',body,options);
   }
 
-  InsertCommande(Restaurant: string,utilisateur: string,plat: string[],quantite: number[],livraison: string,prixTotal: number,dateCommande: Date){
+  InsertCommande(Restaurant: string,utilisateur: string,plat: string[],quantite: number[],livraison: string,prixTotal: number,dateCommande: string){
     const options = this.helper.formOption();
     let body={
       'restaurant':Restaurant,

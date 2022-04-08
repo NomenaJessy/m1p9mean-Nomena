@@ -1,4 +1,4 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
@@ -11,10 +11,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class RestaurantComponent implements OnInit {
   
-  dateCommande = new Date();
+  dateCommande = formatDate(new Date(),'yyyy-mm-dd','en');
 
-  constructor(public data: DataService,public router: Router,public route: ActivatedRoute,public datePipe: DatePipe) {
-    this.dateCommande = this.datePipe.transform(this.dateCommande,'yyyy-mm-dd');
+  constructor(public data: DataService,public router: Router,public route: ActivatedRoute) {
+    
   }
 
   ngOnInit(): void {
@@ -73,24 +73,24 @@ export class RestaurantComponent implements OnInit {
       this.error_msg = "Veuillez indiquer le lieu de livraison";
     }else{
       console.log("Lien");
+      this.InsertCommande();
     }
-    this.InsertCommande();
     this.Selection=[];
   }
 
   InsertCommande(){
-    console.log(this.Selection[0]['Quantite']);
     let Quantite=[];
     let Plat = [];
+    let prixTotal = 0;
     for(let qte of this.Selection){
       Quantite.push(qte['Quantite']);
       Plat.push(qte['NomPlat']);
+      prixTotal += qte['Quantite'] * qte['Prix'];
     }
-    let prixTotal = 0;
     console.log(this.dateCommande);
-    // this.data.InsertCommande(this.restaurant,this.utilisateur,Plat,Quantite,this.Livraison,).subscribe((resultat:any)=>{
-
-    // });
+    this.data.InsertCommande(this.restaurant,this.utilisateur,Plat,Quantite,this.Livraison,prixTotal,this.dateCommande).subscribe((resultat:any)=>{
+      this.router.navigate(['accueil']);
+    });
     // Restaurant: string,utilisateur: string,plat: string[],quantite: number[],livraison: string,prixTotal: number,dateCommande: Date
   }
 
