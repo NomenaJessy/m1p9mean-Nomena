@@ -23,3 +23,8 @@ app.listen(port,function(){
     console.log("Server is running on port 1042");
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
