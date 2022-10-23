@@ -6,7 +6,7 @@ export const environment = {
   production: false
 };
 
-export const base_url = "http://localhost:1042";
+export const base_url = "http://ekaly-nomena.herokuapp.com";
 
 /*
  * For easier debugging in development mode, you can import the following file
